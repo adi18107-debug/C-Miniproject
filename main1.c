@@ -191,9 +191,9 @@ void draw_grid()
         {
             if (board[i][j] == EMPTY) 
             {
-                int cx = BOARD_LEFT + j * CELL_SIZE + CELL_SIZE/2;
-                int cy = BOARD_TOP  + i * CELL_SIZE + CELL_SIZE/2;
-                DrawRectangle(cx - 1, cy - 1, 1073, 3,
+                int cx = BOARD_LEFT + j * CELL_SIZE;
+                int cy = BOARD_TOP  + i * CELL_SIZE;
+                DrawRectangle(cx - 1, cy - 1, 5, 4,
                     (Color){40, 40, 60, 255}); 
             }
         }
