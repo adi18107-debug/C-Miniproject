@@ -209,7 +209,7 @@ void draw_panel()
     DrawRectangle(px, py, pw, 400, (Color){25, 25, 40, 255});
     DrawRectangleLines(px, py, pw, 400, (Color){60, 60, 90, 255});
 
-    DrawText("TETRIS", px + 18, py + 15, 24, RAYWHITE);
+    DrawText("TETRIS", px + 18, py + 15, 24, RED);
     DrawLine(px + 10, py + 45, px + pw - 10, py + 45,
              (Color){60,60,90,255});
 
@@ -225,9 +225,9 @@ void draw_panel()
     DrawLine(px + 10, py + 240, px + pw - 10, py + 240,
              (Color){60,60,90,255});
     DrawText("CONTROLS", px + 12, py + 255, 14, LIGHTGRAY);
-    DrawText("← →  Move",  px + 12, py + 278, 13, DARKGRAY);
-    DrawText("↑    Rotate", px + 12, py + 296, 13, DARKGRAY);
-    DrawText("↓    Drop",   px + 12, py + 314, 13, DARKGRAY);
+    DrawText("A D  Move",  px + 12, py + 278, 13, DARKGRAY);
+    DrawText(" W  Rotate", px + 12, py + 296, 13, DARKGRAY);
+    DrawText("S   Drop",   px + 12, py + 314, 13, DARKGRAY);
     DrawText("Q    Quit",   px + 12, py + 332, 13, DARKGRAY);
 
     int bar_y = py + 370;
