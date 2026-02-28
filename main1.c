@@ -87,8 +87,6 @@ int main(void)
         try_rotate();
         if (IsKeyPressed(KEY_Q))     
         game_over = 1;
-
-        
         if (IsKeyDown(KEY_DOWN)) 
         {
               fall_timer += 5;
@@ -178,8 +176,7 @@ void draw_cell(int col, int row, Color color)
     int px = BOARD_LEFT + col * CELL_SIZE;  
     int py = BOARD_TOP  + row * CELL_SIZE; 
     DrawRectangle(px, py, CELL_SIZE, CELL_SIZE, color);
-    DrawRectangle(px + 2, py + 2, CELL_SIZE - 4, 3,
-        (Color){255, 255, 255, 60});
+    DrawRectangle(px + 2, py + 2, CELL_SIZE - 4, 3, (Color){255, 255, 255, 60});
 }
 
 void draw_grid() 
@@ -193,8 +190,7 @@ void draw_grid()
             {
                 int cx = BOARD_LEFT + j * CELL_SIZE;
                 int cy = BOARD_TOP  + i * CELL_SIZE;
-                DrawRectangle(cx - 1, cy - 1, 5, 4,
-                    (Color){40, 40, 60, 255}); 
+                DrawRectangle(cx - 1, cy - 1, 5, 4,(Color){40, 40, 60, 255}); 
             }
         }
     }
@@ -210,8 +206,7 @@ void draw_panel()
     DrawRectangleLines(px, py, pw, 400, (Color){60, 60, 90, 255});
 
     DrawText("TETRIS", px + 18, py + 15, 24, RED);
-    DrawLine(px + 10, py + 45, px + pw - 10, py + 45,
-             (Color){60,60,90,255});
+    DrawLine(px + 10, py + 45, px + pw - 10, py + 45, (Color){60,60,90,255});
 
     DrawText("SCORE",  px + 15, py + 60,  16, LIGHTGRAY);
     DrawText(TextFormat("%d", score), px + 15, py + 80, 22, YELLOW);
@@ -222,9 +217,9 @@ void draw_panel()
     DrawText("LEVEL",  px + 15, py + 180, 16, LIGHTGRAY);
     DrawText(TextFormat("%d", level), px + 15, py + 200, 22, SKYBLUE);
 
-    DrawLine(px + 10, py + 240, px + pw - 10, py + 240,
-             (Color){60,60,90,255});
-    DrawText("CONTROLS", px + 12, py + 255, 14, LIGHTGRAY);
+    DrawLine(px + 10, py + 240, px + pw - 10, py + 240, (Color){60,60,90,255});
+    
+    DrawText("CONTROLS:", px + 12, py + 255, 14, LIGHTGRAY);
     DrawText("A D  Move",  px + 12, py + 278, 13, DARKGRAY);
     DrawText(" W  Rotate", px + 12, py + 296, 13, DARKGRAY);
     DrawText("S   Drop",   px + 12, py + 314, 13, DARKGRAY);
@@ -232,9 +227,8 @@ void draw_panel()
 
     int bar_y = py + 370;
     DrawText("SPEED", px + 15, bar_y, 14, LIGHTGRAY);
-    DrawRectangle(px + 15, bar_y + 18, 100, 8,
-                  (Color){40, 40, 60, 255});
-    int bar_fill = (lines % 10) * 10; /* 0–100 */
+    DrawRectangle(px + 15, bar_y + 18, 100, 8, (Color){40, 40, 60, 255});
+    int bar_fill = (lines % 10) * 10; 
     DrawRectangle(px + 15, bar_y + 18, bar_fill, 8, ORANGE);
 }
 
